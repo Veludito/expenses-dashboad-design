@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --text-one: white;
+    --text-two: #20215B;
+    --background-one: #8AB8F3;
+    --background-two: #757EF5;
+    --board: white;
+}
+
+body{
+    background-image: linear-gradient(var(--background-one), var(--background-two));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+    font-family: serif;
+    color: var(--text-two);
+}
+
+#board{
+    position: relative;
+    height: 24rem;
+    width: 34rem;
+    padding: 3rem;
+
+    background-color: var(--board);
+    border-radius: 1rem;
+    
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-rows: 1fr 1fr 5fr 1fr;
+}
+#board::before{
+    content: '';
+    height: 24rem;
+    width: 34rem;
+    background-color: var(--board);
+    border-radius: 1rem;
+    opacity: .3;
+    position: absolute;
+    z-index: -1;
+
+    right: 1rem;
+    top: -1rem;
+}
+
+header{
+    width: 100%;
+}
+
+#configs{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#more{
+    width: 3rem;
+    height: 100%;
+
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+#more div, #more div::before, #more div::after{
+    width: .4rem;
+    height: .4rem;
+    background-color: var(--text-two);
+    border-radius: 1rem;
+    position: relative;
+}
+#more div::before{
+    content: '';
+    position: absolute;
+    right: .6rem;
+}
+#more div::after{
+    content: '';
+    position: absolute;
+    left: .6rem;
+}
